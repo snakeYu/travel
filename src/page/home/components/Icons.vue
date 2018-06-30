@@ -68,10 +68,13 @@ export default{
 <style lang="scss" scoped>
 @import '~@/assets/styles/mixin.scss';
 @import '~@/assets/styles/varibles.scss';
-.icons {
-  overflow: hidden;
+.icon /deep/ .swiper-container {
   height: 0;
   padding-bottom: 50%;
+}
+.icons {
+  margin-top: 0.1rem;
+
   .icon {
     position: relative;
     overflow: hidden;
