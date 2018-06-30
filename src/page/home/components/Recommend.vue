@@ -2,7 +2,7 @@
   <div>
     <div class="recommend-title">热门推荐</div>
     <ul>
-      <li class="item border-bottom" v-for='item in itemsList' :key='item.id'>
+      <li class="item border-bottom" v-for='item in recommendList' :key='item.id'>
         <img :src="item.imgUrl" alt="" class="item-img">
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
@@ -16,21 +16,22 @@
 <script>
 export default{
   name: 'recommend',
+  props: ['recommendList'],
   data () {
     return {
-      itemsList: [
-        {
-          id: '0001',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1609/7a/7ae8ee7831836095a3.water.jpg_200x200_36727f69.jpg',
-          title: '大连圣亚海洋世界',
-          desc: '浪漫大连首站，浪漫的海洋主题乐园'
-        }, {
-          id: '0002',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1803/12/126471e0966aca5ba3.img.jpg_200x200_f1286016.jpg',
-          title: '北京国际鲜花港',
-          desc: '种类繁多的花儿，围绕着你'
-        }
-      ]
+      // itemsList: [
+      //   {
+      //     id: '0001',
+      //     imgUrl: 'http://img1.qunarzz.com/sight/p0/1609/7a/7ae8ee7831836095a3.water.jpg_200x200_36727f69.jpg',
+      //     title: '大连圣亚海洋世界',
+      //     desc: '浪漫大连首站，浪漫的海洋主题乐园'
+      //   }, {
+      //     id: '0002',
+      //     imgUrl: 'http://img1.qunarzz.com/sight/p0/1803/12/126471e0966aca5ba3.img.jpg_200x200_f1286016.jpg',
+      //     title: '北京国际鲜花港',
+      //     desc: '种类繁多的花儿，围绕着你'
+      //   }
+      // ]
     }
   }
 }

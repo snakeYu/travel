@@ -7,22 +7,25 @@
       <span class="iconfont">&#xe632;</span>
       输入城市/景点/游玩主题
     </div>
-    <div class="header-right">
-      城市
-      <span class="iconfont arrow-icon">&#xe64a;</span>
-    </div>
+    <router-link to="/city">
+      <div class="header-right">
+        {{city}}
+        <span class="iconfont arrow-icon">&#xe64a;</span>
+      </div>
+    </router-link>
   </div>
 </template>
 <script>
 export default{
-  name: 'Header'
+  name: 'Header',
+  props: ['city']
 }
 </script>
 <style lang="scss" scoped>
 @import '~@/assets/styles/varibles.scss';
 .header {
   display: flex;
-  line-height: 0.86rem;
+  line-height: $headerHeight;
   color: #fff;
   background-color: $bgColor;
   .header-left {
@@ -40,17 +43,17 @@ export default{
     line-height: 0.64rem;
     margin-top: 0.12rem;
     margin-left: 0.2rem;
-    margin-right: 0.2rem;
     padding-left: 0.2rem;
     background-color: #fff;
     border-radius: 0.1rem;
     color: #ccc;
   }
 
-  .height-right {
+  .header-right {
     width: 1.24rem;
     float: right;
     text-align: center;
+    color: #fff;
     .arrow-icon {
       margin-left: -0.04rem;
       font-size: 0.2rem;

@@ -13,6 +13,7 @@
 <script>
 export default{
   name: 'carrousel',
+  props: ['swiperList'],
   data () {
     return {
       swiperOption: {
@@ -21,16 +22,16 @@ export default{
           el: '.swiper-pagination'
         },
         loop: true
-      },
-      swiperList: [
-        {
-          id: '0001',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/bd/8e4a1c3f470d3702.jpg_750x200_f1f0a8c7.jpg'
-        }, {
-          id: '0002',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1806/56/d939255eab633a02.jpg_750x200_c08a2c07.jpg'
-        }
-      ]
+      }
+      // swiperList: [
+      //   {
+      //     id: '0001',
+      //     imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/bd/8e4a1c3f470d3702.jpg_750x200_f1f0a8c7.jpg'
+      //   }, {
+      //     id: '0002',
+      //     imgUrl: 'http://img1.qunarzz.com/piao/fusion/1806/56/d939255eab633a02.jpg_750x200_c08a2c07.jpg'
+      //   }
+      // ]
     }
   }
 }
