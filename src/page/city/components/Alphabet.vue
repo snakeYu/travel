@@ -1,13 +1,13 @@
 <template>
   <ul class="list">
-    <li class="item">A</li>
-    <li class="item">B</li>
-    <li class="item">C</li>
+    <li class="item" v-for="(keyWord,kw) in cities" :key='kw'>{{kw}}</li>
+
   </ul>
 </template>
 <script>
 export default{
-  name: 'cityAlpabet'
+  name: 'cityAlpabet',
+  props: ['cities']
 }
 </script>
 <style lang="scss" scoped>
