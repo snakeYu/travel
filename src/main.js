@@ -6,9 +6,11 @@ import router from './router'
 // 300毫秒延迟的问题
 import fastClick from 'fastclick'
 // css reset
-import './assets/style/reset.css'
+import '@/assets/styles/reset.css'
 // css border 1px 问题解决方式
-import './assets/style/border.css'
+import '@/assets/styles/border.css'
+// 字体图标
+import '@/assets/styles/iconfont.css'
 fastClick.attach(document.body)
 Vue.config.productionTip = false
 
