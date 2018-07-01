@@ -19,10 +19,12 @@ export default{
     HomeHeader, HomeSwiper, HomeIcons, HomeRecommend, HomeWeekend
   },
   created () {
+    this.lastCity = this.city
     this.getHomeInfo()
   },
   data () {
     return {
+      lastCity: '',
       city: '',
       swiperList: [],
       recommendList: [],
@@ -32,7 +34,7 @@ export default{
   },
   methods: {
     getHomeInfo () {
-      this.axios.get('api/index.json').then(res => {
+      this.axios.get('api/index.json?city=' + this.$store.getters.getCity).then(res => {
         res = res.data
         console.log(res)
         if (res.ret && res.data) {
@@ -43,6 +45,12 @@ export default{
           this.iconList = data.iconList
         }
       })
+    }
+  },
+  activated () {
+    if (this.lastCity !== this.city) {
+      this.lastCity = this.city
+      this.getHomeInfo()
     }
   }
 }
