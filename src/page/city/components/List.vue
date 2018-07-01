@@ -5,7 +5,7 @@
         <div class="title border-topbottom">当前城市</div>
         <div class="button-list">
           <div class="button-wrapper">
-            <div class="button">北京</div>
+            <div class="button">{{this.$store.getters.getCity}}</div>
           </div>
         </div>
       </div>
@@ -13,7 +13,7 @@
         <div class="title border-topbottom">热门城市</div>
         <div class="button-list">
           <div class="button-wrapper" v-for='city in hotCities' :key='city.id'>
-            <div class="button">{{city.name}}</div>
+            <div class="button" @click='setCity(city.name)'>{{city.name}}</div>
           </div>
 
         </div>
@@ -21,7 +21,7 @@
       <div class="area" v-for='(group,kw) of cities' :key='kw' :ref='kw'>
         <div class="title border-topbottom">{{kw}}</div>
         <div class="item-list">
-          <div class="item border-bottom" v-for="item in group" :key='item.id'>{{item.name}}</div>
+          <div class="item border-bottom" v-for="item in group" :key='item.id' @click='setCity(item.name)'>{{item.name}}</div>
 
         </div>
       </div>
@@ -44,6 +44,12 @@ export default{
         const element = this.$refs[this.letter][0]
         this.scroll.scrollToElement(element)
       }
+    }
+  },
+  methods: {
+    setCity (ctx) {
+      this.$store.commit('setCity', ctx)
+      this.$router.push('/')
     }
   }
 }

@@ -9,7 +9,7 @@
     </div>
     <router-link to="/city" tag='div'>
       <div class="header-right">
-        {{city}}
+        {{this.$store.getters.getCity}}
         <span class="iconfont arrow-icon">&#xe64a;</span>
       </div>
     </router-link>
@@ -17,8 +17,7 @@
 </template>
 <script>
 export default{
-  name: 'Header',
-  props: ['city']
+  name: 'Header'
 }
 </script>
 <style lang="scss" scoped>
@@ -50,13 +49,14 @@ export default{
   }
 
   .header-right {
-    width: 1.24rem;
+    min-width: 1.04rem;
+    padding: 0.1rem;
     float: right;
     text-align: center;
     color: #fff;
     .arrow-icon {
       margin-left: -0.04rem;
-      font-size: 0.2rem;
+      font-size: 0.24rem;
     }
   }
 }
