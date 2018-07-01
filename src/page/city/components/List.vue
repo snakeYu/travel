@@ -18,7 +18,7 @@
 
         </div>
       </div>
-      <div class="area" v-for='(group,kw) of cities' :key='kw'>
+      <div class="area" v-for='(group,kw) of cities' :key='kw' :ref='kw'>
         <div class="title border-topbottom">{{kw}}</div>
         <div class="item-list">
           <div class="item border-bottom" v-for="item in group" :key='item.id'>{{item.name}}</div>
@@ -32,10 +32,19 @@
 <script>
 import Bscroll from 'better-scroll'
 export default{
-  props: ['cities', 'hotCities'],
+  props: {cities: Object, hotCities: Array, letter: String},
   name: 'cityList',
   mounted () {
     this.scroll = new Bscroll(this.$refs.wrapper)
+  },
+  watch: {
+    letter () {
+      if (this.letter) {
+        // 这里获取的refs是个数组形式的，所以要加【0】
+        const element = this.$refs[this.letter][0]
+        this.scroll.scrollToElement(element)
+      }
+    }
   }
 }
 </script>
