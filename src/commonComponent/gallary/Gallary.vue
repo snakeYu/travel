@@ -33,10 +33,7 @@ export default{
       swiperOption: {
         pagination: {
           el: '.swiper-pagination',
-          type: 'fraction',
-          //  解决点击后轮播图无法正常轮播的问题，有下面两个属性，就会自动刷新一次
-          observeParents: true,
-          observer: true
+          type: 'fraction'
         }
       }
     }
