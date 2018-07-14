@@ -1,6 +1,7 @@
 <template>
   <ul class="list">
-    <li class="item" v-for="kw in letters" :key='kw' :ref='kw' @touchstart='handleTouchStart' @touchmove='handleTouchMove' @touchend='handleTouchEnd' @click="handleLetterClick">{{kw}}</li>
+    <!-- .prevent防止拖动滚动 -->
+    <li class="item" v-for="kw in letters" :key='kw' :ref='kw' @touchstart.prevent='handleTouchStart' @touchmove='handleTouchMove' @touchend='handleTouchEnd' @click="handleLetterClick">{{kw}}</li>
 
   </ul>
 </template>
