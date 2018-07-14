@@ -40,6 +40,7 @@ export default{
     window.addEventListener('scroll', this.handleScroll)
   },
   deactivated () {
+    // keep-alive组件停用时被调用
     // 页面被隐藏或被替换的时候触发
     window.removeEventListener('scroll', this.handleScroll)
   }
@@ -73,6 +74,7 @@ export default{
   color: #fff;
   background-color: $bgColor;
   font-size: 0.32rem;
+  z-index: 3;
   .header-fixed-back {
     float: left;
     width: 0.64rem;
