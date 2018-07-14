@@ -34,7 +34,10 @@ export default{
         pagination: {
           el: '.swiper-pagination',
           type: 'fraction'
-        }
+        },
+        // 下面这是监视器，当父元素发生变化时，例如resize,等就会触发
+        observeParents: true,
+        observer: true
       }
     }
   }
