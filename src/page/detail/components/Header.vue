@@ -36,7 +36,12 @@ export default{
     }
   },
   activated () {
+    // 这里是全局方法，离开这个页面即要解绑
     window.addEventListener('scroll', this.handleScroll)
+  },
+  deactivated () {
+    // 页面被隐藏或被替换的时候触发
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>
